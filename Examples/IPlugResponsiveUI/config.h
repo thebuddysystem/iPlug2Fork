@@ -1,5 +1,5 @@
 #define PLUG_NAME "IPlugResponsiveUI"
-#define PLUG_MFR "AcmeInc"
+#define PLUG_MFR "AcmeIncTest"
 #define PLUG_VERSION_HEX 0x00010000
 #define PLUG_VERSION_STR "1.0.0"
 #define PLUG_UNIQUE_ID 'uPfn'
@@ -24,8 +24,10 @@
 #define PLUG_DOES_MPE 0
 #define PLUG_DOES_STATE_CHUNKS 0
 #define PLUG_HAS_UI 1
-#define PLUG_WIDTH 1024
-#define PLUG_HEIGHT 768
+#define PLUG_WIDTH 637
+#define PLUG_HEIGHT 279
+#define PLUG_WIDTH_IPAD 1024
+#define PLUG_HEIGHT_IPAD 768
 #define PLUG_FPS 60
 #define PLUG_SHARED_RESOURCES 0
 #define PLUG_HOST_RESIZE 1

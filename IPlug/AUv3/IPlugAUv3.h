@@ -44,6 +44,8 @@ class IPlugAUv3 : public IPlugAPIBase
                 , public IPlugProcessor
 {
 public:
+  static bool IsIPad();
+    
   IPlugAUv3(const InstanceInfo& info, const Config& config);
   
   //IPlugAPIBase

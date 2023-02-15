@@ -3,6 +3,21 @@
 #include "IControls.h"
 #include "Test/TestSizeControl.h"
 
+
+namespace {
+
+bool isIPad()
+{
+    static bool ipad =
+#if defined(OS_IOS)
+    IPlugAUv3::IsIPad();
+#else
+    false;
+#endif
+    return ipad;
+}
+
+}
 IPlugResponsiveUI::IPlugResponsiveUI(const InstanceInfo& info)
 : Plugin(info, MakeConfig(kNumParams, kNumPresets))
 {
@@ -15,7 +30,9 @@ IPlugResponsiveUI::IPlugResponsiveUI(const InstanceInfo& info)
     GetScreenDimensions(w, h);
     return MakeGraphics(*this, w, h, 1.f);
 #else
-    return MakeGraphics(*this, PLUG_WIDTH, PLUG_HEIGHT, PLUG_FPS);
+      const auto w = isIPad() ? PLUG_WIDTH_IPAD : PLUG_WIDTH;
+      const auto h = isIPad() ? PLUG_HEIGHT_IPAD : PLUG_HEIGHT;
+      return MakeGraphics(*this, w, h, PLUG_FPS);
 #endif
   };
 

@@ -20,6 +20,11 @@
 
 using namespace iplug;
 
+bool IPlugAUv3::IsIPad() {
+    UIUserInterfaceIdiom idiom = [[UIDevice currentDevice] userInterfaceIdiom];
+    return idiom == UIUserInterfaceIdiomPad;
+}
+
 IPlugAUv3::IPlugAUv3(const InstanceInfo& instanceInfo, const Config& config)
 : IPlugAPIBase(config, kAPIAUv3)
 , IPlugProcessor(config, kAPIAUv3)
